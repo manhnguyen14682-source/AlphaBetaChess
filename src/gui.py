@@ -30,7 +30,7 @@ class ChessGUI:
         self.selected_square: int | None = None
         self.highlight_moves: set[int] = set()
         self.last_ai_move_squares: set[int] = set()
-        self.player_perspective = chess.WHITE  # WHITE = view from white's side, BLACK = flipped
+        self.player_perspective = chess.WHITE
         self.root.title("Alpha-Beta Chess")
         self.root.geometry("720x700")
         self.root.minsize(520, 560)
