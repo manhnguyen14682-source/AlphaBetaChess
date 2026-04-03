@@ -62,14 +62,12 @@ class ChessGUI:
         hint = "#8ccf7f"
         for rank in range(8):
             for file in range(8):
-                # Flip board if player is black
                 if self.player_perspective == chess.BLACK:
                     display_file = 7 - file
                     display_rank = 7 - rank
                 else:
                     display_file = file
                     display_rank = rank
-                
                 x1 = file * self.square_size
                 y1 = rank * self.square_size
                 x2 = x1 + self.square_size
@@ -114,12 +112,9 @@ class ChessGUI:
         rank_from_top = event.y // self.square_size
         if not (0 <= file <= 7 and 0 <= rank_from_top <= 7):
             return
-        
-        # Flip coordinates if player is black
         if self.player_perspective == chess.BLACK:
             file = 7 - file
             rank_from_top = 7 - rank_from_top
-        
         rank = 7 - rank_from_top
         square = chess.square(file, rank)
         self.on_square_click(square)
