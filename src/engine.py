@@ -77,7 +77,6 @@ class AlphaBetaEngine:
 
     def _evaluate(self, board: chess.Board) -> float:
         if board.is_checkmate():
-            # If side to move is checkmated, the previous player has won.
             return -100000 if board.turn == chess.WHITE else 100000
         if board.is_stalemate() or board.is_insufficient_material():
             return 0
